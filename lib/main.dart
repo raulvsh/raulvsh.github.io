@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      //title: 'My Portfolio',
+      title: 'RaulVelasco.dev',
       theme: ThemeData(
         primarySwatch: Colors.blue, // Cambiar el color principal a azul
         visualDensity: VisualDensity.adaptivePlatformDensity,
