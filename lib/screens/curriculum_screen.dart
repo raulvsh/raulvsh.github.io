@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CurriculumScreen extends StatelessWidget {
+  const CurriculumScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Curriculum Screen'),
     );
   }

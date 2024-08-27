@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'screens/home_screen.dart';
-import 'screens/projects_screen.dart';
-import 'screens/books_main_screen.dart';
-import 'screens/book_detail_screen.dart';
+// Asegúrate de que este archivo está correctamente importado
+
+//import 'screens/projects_screen.dart';
+//import 'screens/books_main_screen.dart';
+//import 'screens/book_detail_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Asegúrate de que esta línea no se comenta
-  runApp(MyApp());
+  //await Firebase.initializeApp(); // Asegúrate de usar las opciones correctas para la web
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,7 +23,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue, // Cambiar el color principal a azul
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: HomeScreen(),
+      home: const HomeScreen(),
 
       /*initialRoute: '/',
       routes: {

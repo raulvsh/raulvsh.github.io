@@ -4,6 +4,8 @@ import 'books_main_screen.dart';
 import 'curriculum_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -12,10 +14,10 @@ class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
   final List<Widget> _pages = [
-    HomeScreenContent(), // Puedes añadir el contenido de la pantalla principal aquí
-    ProjectsScreen(),
-    BooksMainScreen(),
-    CurriculumScreen(),
+    const HomeScreenContent(), // Puedes añadir el contenido de la pantalla principal aquí
+    const ProjectsScreen(),
+    const BooksMainScreen(),
+    const CurriculumScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -28,23 +30,23 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Portfolio'),
+        title: const Text('My Portfolio'),
         backgroundColor: Colors.blue, // Cambiar el color de la AppBar a azul
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.home),
+            icon: const Icon(Icons.home),
             onPressed: () => _onItemTapped(0),
           ),
           IconButton(
-            icon: Icon(Icons.work),
+            icon: const Icon(Icons.work),
             onPressed: () => _onItemTapped(1),
           ),
           IconButton(
-            icon: Icon(Icons.person),
+            icon: const Icon(Icons.person),
             onPressed: () => _onItemTapped(3),
           ),
           IconButton(
-            icon: Icon(Icons.book),
+            icon: const Icon(Icons.book),
             onPressed: () => _onItemTapped(2),
           ),
         ],
@@ -55,9 +57,11 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class HomeScreenContent extends StatelessWidget {
+  const HomeScreenContent({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text('Home Screen Content'),
     );
   }
