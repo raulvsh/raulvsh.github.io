@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'projects_screen.dart';
+import 'portfolio_screen.dart';
 import 'books_main_screen.dart';
 import 'curriculum_screen.dart';
 
@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   final List<Widget> _pages = [
     const HomeScreenContent(), // Puedes añadir el contenido de la pantalla principal aquí
-    const ProjectsScreen(),
+    const PortfolioScreen(),
     const BooksMainScreen(),
     const CurriculumScreen(),
   ];
