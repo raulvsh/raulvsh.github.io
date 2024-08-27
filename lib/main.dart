@@ -3,10 +3,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'screens/navigator_screen.dart';
 
-//import 'screens/projects_screen.dart';
-//import 'screens/books_main_screen.dart';
-//import 'screens/book_detail_screen.dart';
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   try {
@@ -14,9 +10,9 @@ void main() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    print("Firebase inicializado correctamente.");
+    //print("Firebase inicializado correctamente.");
   } catch (e) {
-    print("Error al inicializar Firebase: $e");
+    //print("Error al inicializar Firebase: $e");
   }
   runApp(MyApp());
 }
@@ -26,27 +22,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    ctoreturn MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'RaulVelassco.dev',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      /*home: const Center(
-        child: Text('hola'),
-      )*/
-      
+      ),    
       
       home: const NavigatorScreen(),
-
-      /*initialRoute: '/',
-      routes: {
-        '/': (context) => HomeScreen(),
-        '/projects': (context) => ProjectsScreen(),
-        '/book_summaries': (context) => BooksMainScreen(),
-        '/book_detail': (context) => BookDetailScreen(),
-      },*/
     );
   }
 }

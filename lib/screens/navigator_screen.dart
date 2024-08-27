@@ -17,8 +17,8 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
   final List<Widget> _pages = [
     const HomeScreen(), // Puedes añadir el contenido de la pantalla principal aquí
     const PortfolioScreen(),
-    const BooksMainScreen(),
     const CurriculumScreen(),
+    const BooksMainScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -62,14 +62,13 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
               actions: <Widget>[
                 //_buildIconButton(Icons.home, 'Home', 0),
                 _buildIconButton(Icons.work, 'Portfolio', 1),
-                _buildIconButton(Icons.person, 'Currículum', 3),
-                _buildIconButton(Icons.book, 'Libros', 2),
+                _buildIconButton(Icons.person, 'Currículum', 2),
+                _buildIconButton(Icons.book, 'Libros', 3),
               ],
             ),
             _pages[_selectedIndex],
           ],
         ),
-        
       ),
     );
   }
@@ -100,30 +99,29 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
 
   Row _buildIconAndTextRow(IconData icon, String label, int index) {
     return Row(
-          children: <Widget>[
-            Icon(
-              icon,
-              color: Colors.white, // Ícono en blanco
+      children: <Widget>[
+        Icon(
+          icon,
+          color: Colors.white, // Ícono en blanco
+        ),
+        const SizedBox(width: 8.0), // Espacio entre el icono y el texto
+        Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Text(
+              label.toUpperCase(), // Texto en mayúsculas
+              style: const TextStyle(
+                fontFamily: 'SanFrancisco',
+                color: Colors.white, // Texto en blanco
+                fontWeight: FontWeight.normal,
+                decoration: TextDecoration.none, // Sin subrayado por defecto
+              ),
             ),
-            const SizedBox(width: 8.0), // Espacio entre el icono y el texto
-            Stack(
-              clipBehavior: Clip.none,
-              children: [
-                Text(
-                  label.toUpperCase(), // Texto en mayúsculas
-                  style: const TextStyle(
-                    fontFamily: 'SegoeUI',
-                    color: Colors.white, // Texto en blanco
-                    fontWeight: FontWeight.normal,
-                    decoration:
-                        TextDecoration.none, // Sin subrayado por defecto
-                  ),
-                ),
-                if (_hoveredIndex == index) _buildSectionsUnderscore(label),
-              ],
-            ),
+            if (_hoveredIndex == index) _buildSectionsUnderscore(label),
           ],
-        );
+        ),
+      ],
+    );
   }
 
   Positioned _buildSectionsUnderscore(String label) {
@@ -132,7 +130,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
       bottom: -3.0, // Ajusta esta distancia para separar el subrayado del texto
       child: Container(
         width: label.length *
-            8.0, // Ajusta el ancho del subrayado según la longitud del texto
+            9.2, // Ajusta el ancho del subrayado según la longitud del texto
         height: 1.5, // Grosor del subrayado
         color: Colors.white, // Color del subrayado
       ),
