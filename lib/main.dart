@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-import 'screens/home_screen.dart';
+import 'screens/navigator_screen.dart';
 
 //import 'screens/projects_screen.dart';
 //import 'screens/books_main_screen.dart';
@@ -30,10 +30,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'RaulVelasco.dev',
       theme: ThemeData(
-        primarySwatch: Colors.blue, // Cambiar el color principal a azul
+        primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const HomeScreen(),
+      /*home: const Center(
+        child: Text('hola'),
+      )*/
+      
+      
+      home: const NavigatorScreen(),
 
       /*initialRoute: '/',
       routes: {

@@ -5,8 +5,10 @@ class PortfolioScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
+    return //Scaffold(
+      //body: 
+      
+      Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             image:
@@ -58,7 +60,7 @@ class PortfolioScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
+      //),
       /*body: ListView(
         
         children: <Widget>[
