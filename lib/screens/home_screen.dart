@@ -29,8 +29,9 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
       appBar: AppBar(
-        title: const Text('My Portfolio'),
+        title: const Text('raulvelasco.dev'),
         backgroundColor: Colors.blue, // Cambiar el color de la AppBar a azul
         actions: <Widget>[
           IconButton(

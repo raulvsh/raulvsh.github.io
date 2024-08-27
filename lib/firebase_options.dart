@@ -47,13 +47,13 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBpA4GrTLQt4u3LEDSCp4VJPtfAscZYVqY',
-    appId: '1:121170303031:web:567ff0ec52e49325a5c7b2',
-    messagingSenderId: '121170303031',
-    projectId: 'raulvelasco-dev',
-    authDomain: 'raulvelasco-dev.firebaseapp.com',
-    storageBucket: 'raulvelasco-dev.appspot.com',
-    measurementId: 'G-SB0GGBY2Y8',
+    apiKey: 'AIzaSyBBCXyuTeLzoZ-uyofBadj3FLoKCUwtGxU',
+    appId: '1:333012273420:web:4135214859ea8eedf72129',
+    messagingSenderId: '333012273420',
+    projectId: 'raulvelasco-dev-24fce',
+    authDomain: 'raulvelasco-dev-24fce.firebaseapp.com',
+    storageBucket: 'raulvelasco-dev-24fce.appspot.com',
+    measurementId: 'G-G9JKE8MYDK',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
