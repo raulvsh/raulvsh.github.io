@@ -22,9 +22,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ctoreturn MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'RaulVelassco.dev',
+      title: 'RaulVelasco.dev',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,

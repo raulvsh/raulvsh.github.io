@@ -59,37 +59,37 @@ class PortfolioScreen extends StatelessWidget {
               6 / 2, // Relación de aspecto de los elementos (ancho/alto)
         ),
         children: [
-          _buildGridTile(
+          GridTileWidget(
             imagePath: './assets/images/hepapplogo.png',
             title: 'HepApp',
             subtitle:
                 'HepApptology es una aplicación realizada en colaboración con la Universidad de Calgary, en Alberta (Canadá). Se trata de una herramienta educacional destinada a médicos y estudiantes de medicina, con información sobre el hígado y la evaluación, diagnóstico y tratamiento del carcinoma hepatocelular (HCC).',
           ),
-          _buildGridTile(
+          GridTileWidget(
             imagePath: 'assets/images/rssportlogo.png',
             title: 'RS Sport Web',
             subtitle:
                 'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.',
           ),
-          _buildGridTile(
+          GridTileWidget(
             imagePath: 'assets/images/rssportlogo.png',
             title: 'RS Sport Web',
             subtitle:
                 'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.',
           ),
-          _buildGridTile(
+          GridTileWidget(
             imagePath: './assets/images/hepapplogo.png',
             title: 'HepApp',
             subtitle:
                 'HepApptology es una aplicación realizada en colaboración con la Universidad de Calgary, en Alberta (Canadá). Se trata de una herramienta educacional destinada a médicos y estudiantes de medicina, con información sobre el hígado y la evaluación, diagnóstico y tratamiento del carcinoma hepatocelular (HCC).',
           ),
-          _buildGridTile(
+          GridTileWidget(
             imagePath: 'assets/images/rssportlogo.png',
             title: 'RS Sport Web',
             subtitle:
                 'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.',
           ),
-          _buildGridTile(
+          GridTileWidget(
             imagePath: 'assets/images/rssportlogo.png',
             title: 'RS Sport Web',
             subtitle:
@@ -105,7 +105,7 @@ class PortfolioScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildGridTile({
+ /* Widget _buildGridTile({
     required String imagePath,
     required String title,
     required String subtitle,
@@ -157,7 +157,7 @@ class PortfolioScreen extends StatelessWidget {
         ],
       ),
     );
-  }
+  }*/
 
   Widget _buildListTileLeft({
     required String imagePath,
