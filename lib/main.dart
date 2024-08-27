@@ -5,9 +5,9 @@ import 'screens/projects_screen.dart';
 import 'screens/books_main_screen.dart';
 import 'screens/book_detail_screen.dart';
 
-void main() /*async*/ {
-  //WidgetsFlutterBinding.ensureInitialized();
-  //await Firebase.initializeApp();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(); // Asegúrate de que esta línea no se comenta
   runApp(MyApp());
 }
 
@@ -20,9 +20,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue, // Cambiar el color principal a azul
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      /*home: Scaffold(
-        appBar: AppBar(title: Text("hola que tal")),
-      ),*/
       home: HomeScreen(),
 
       /*initialRoute: '/',

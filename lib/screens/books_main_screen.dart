@@ -8,26 +8,27 @@ class BooksMainScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('Book Summaries'),
       ),
-      body: StreamBuilder(
+      body: StreamBuilder<QuerySnapshot>(
         stream: FirebaseFirestore.instance.collection('books').snapshots(),
-        builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
+        builder: (context, snapshot) {
+          if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          }
           if (!snapshot.hasData) {
             return Center(child: CircularProgressIndicator());
           }
           final books = snapshot.data!.docs;
+
           return ListView.builder(
             itemCount: books.length,
             itemBuilder: (context, index) {
-              final book = books[index];
+              final book = books[index].data() as Map<String, dynamic>;
               return ListTile(
                 title: Text(book['title']),
-                subtitle: Text(book['author']),
+                subtitle: Text('By ${book['author']}'),
+                leading: Image.network(book['coverImage']),
                 onTap: () {
-                  Navigator.pushNamed(
-                    context,
-                    '/book_detail',
-                    arguments: book.id,
-                  );
+                  // Aquí puedes implementar la acción al tocar un libro
                 },
               );
             },

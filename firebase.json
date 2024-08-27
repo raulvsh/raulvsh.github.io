@@ -1,1 +1,20 @@
-{"flutter":{"platforms":{"dart":{"lib/firebase_options.dart":{"projectId":"raulvelasco-dev","configurations":{"android":"1:121170303031:android:c1f9df60365cd8c0a5c7b2","web":"1:121170303031:web:567ff0ec52e49325a5c7b2","windows":"1:121170303031:web:9096834d9e25ee4ca5c7b2"}}}}}}
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
