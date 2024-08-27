@@ -5,9 +5,9 @@ import 'screens/projects_screen.dart';
 import 'screens/books_main_screen.dart';
 import 'screens/book_detail_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+void main() /*async*/ {
+  //WidgetsFlutterBinding.ensureInitialized();
+  //await Firebase.initializeApp();
   runApp(MyApp());
 }
 
@@ -17,19 +17,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'My Portfolio',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue, // Cambiar el color principal a azul
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       /*home: Scaffold(
         appBar: AppBar(title: Text("hola que tal")),
       ),*/
-      initialRoute: '/',
+      home: HomeScreen(),
+
+      /*initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
         '/projects': (context) => ProjectsScreen(),
         '/book_summaries': (context) => BooksMainScreen(),
         '/book_detail': (context) => BookDetailScreen(),
-      },
+      },*/
     );
   }
 }
