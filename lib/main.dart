@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'screens/home_screen.dart';
+import 'screens/projects_screen.dart';
+import 'screens/books_main_screen.dart';
+import 'screens/book_detail_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,21 +19,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomeScreen(),
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('My Portfolio'),
-      ),
-      body: Center(
-        child: Text('Welcome to My Portfolio!'),
-      ),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomeScreen(),
+        '/projects': (context) => ProjectsScreen(),
+        '/book_summaries': (context) => BooksMainScreen(),
+        '/book_detail': (context) => BookDetailScreen(),
+      },
     );
   }
 }
