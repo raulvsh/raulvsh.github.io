@@ -5,10 +5,39 @@ class PortfolioScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return //Scaffold(
-      //body: 
-      
-      Container(
+    //return Center(child: Text('portfolio'));
+
+    return Column(
+      children: [
+        AppBar(
+          title: const Text('Portfolio',
+              style: TextStyle(
+                color: Colors.white,
+              )),
+
+          backgroundColor: Colors.transparent, // Hace la AppBar transparente
+        ),
+        _buildListTileLeft(
+          imagePath: './assets/images/hepapplogo.png',
+          title: 'HepApp',
+          subtitle:
+              'HepApptology es una aplicación realizada en colaboración con la Universidad de Calgary, en Alberta (Canadá). Se trata de una herramienta educacional destinada a médicos y estudiantes de medicina, con información sobre el hígado y la evaluación, diagnóstico y tratamiento del carcinoma hepatocelular (HCC).',
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        _buildListTileLeft(
+          imagePath: 'assets/images/rssportlogo.png',
+          title: 'RS Sport Web',
+          subtitle:
+              'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.',
+        ),
+      ],
+    );
+
+    //body:
+
+    /*Container(
         decoration: BoxDecoration(
           image: DecorationImage(
             image:
@@ -77,7 +106,7 @@ class PortfolioScreen extends StatelessWidget {
           // Añade más ListTiles según sea necesario
         ],
       ),*/
-    );
+    );*/
   }
 }
 
