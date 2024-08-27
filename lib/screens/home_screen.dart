@@ -29,30 +29,55 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    
       appBar: AppBar(
-        title: const Text('raulvelasco.dev'),
-        backgroundColor: Colors.blue, // Cambiar el color de la AppBar a azul
+        title: TextButton(
+          onPressed: () {
+            // Navega a la pantalla HomeScreen
+            setState(() {
+              _selectedIndex =
+                  0; // Asegúrate de que la pantalla de inicio esté seleccionada
+            });
+          },
+          child: const Text(
+            'raulvelasco.dev',
+            style: TextStyle(
+              color: Colors.white, // Color del texto
+              fontSize: 20.0, // Tamaño del texto
+            ),
+          ),
+        ),
+        backgroundColor: Theme.of(context)
+            .primaryColorLight, // Cambiar el color de la AppBar
         actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.home),
-            onPressed: () => _onItemTapped(0),
-          ),
-          IconButton(
-            icon: const Icon(Icons.work),
-            onPressed: () => _onItemTapped(1),
-          ),
-          IconButton(
-            icon: const Icon(Icons.person),
-            onPressed: () => _onItemTapped(3),
-          ),
-          IconButton(
-            icon: const Icon(Icons.book),
-            onPressed: () => _onItemTapped(2),
-          ),
+          //_buildIconButton(Icons.home, 'Home', 0),
+          _buildIconButton(Icons.work, 'Projects', 1),
+          _buildIconButton(Icons.person, 'Curriculum', 3),
+          _buildIconButton(Icons.book, 'Books', 2),
         ],
       ),
       body: _pages[_selectedIndex],
+    );
+  }
+
+  // Método para construir los IconButton con texto
+  Widget _buildIconButton(IconData icon, String label, int index) {
+    return TextButton(
+      onPressed: () => _onItemTapped(index),
+      style: TextButton.styleFrom(
+        //color
+        //primaryc: Colors.white, // Color del texto
+        minimumSize: Size.zero, // Tamaño mínimo del botón
+        padding: EdgeInsets.symmetric(horizontal: 16.0), // Espaciado horizontal
+        tapTargetSize:
+            MaterialTapTargetSize.shrinkWrap, // Tamaño del área de toque
+      ),
+      child: Row(
+        children: <Widget>[
+          Icon(icon),
+          SizedBox(width: 8.0), // Espacio entre el icono y el texto
+          Text(label),
+        ],
+      ),
     );
   }
 }
