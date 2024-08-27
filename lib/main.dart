@@ -18,7 +18,11 @@ class MyApp extends StatelessWidget {
       title: 'My Portfolio',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      /*home: Scaffold(
+        appBar: AppBar(title: Text("hola que tal")),
+      ),*/
       initialRoute: '/',
       routes: {
         '/': (context) => HomeScreen(),
