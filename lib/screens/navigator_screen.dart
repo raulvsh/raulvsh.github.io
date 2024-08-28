@@ -81,7 +81,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
                     _selectedIndex =
                         0; // La pantalla de inicio esté seleccionada
                   });
-                  _onItemTapped(AppRoutes.curriculum);
+                  _onItemTapped(AppRoutes.home);
                 },
                 child: const Text(
                   'raulvelasco.dev',

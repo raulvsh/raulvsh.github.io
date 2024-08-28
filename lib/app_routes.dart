@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:raulvelasco_dev/screens/books_main_screen.dart';
 import 'package:raulvelasco_dev/screens/curriculum_screen.dart';
 import 'package:raulvelasco_dev/screens/home_screen.dart';
+import 'package:raulvelasco_dev/screens/navigator_screen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/hepapp_detail_sceen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/rssport_detail_screen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/solucioneshosteleras_detail_screen.dart';
@@ -35,7 +36,7 @@ class AppRoutes {
       case solucionesHostelerasDetail:
         return MaterialPageRoute(builder: (_) => const SolucionesHostelerasDetailScreen());
       default:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
+        return MaterialPageRoute(builder: (_) => const NavigatorScreen());
     }
   }
 }

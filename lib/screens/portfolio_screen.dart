@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:raulvelasco_dev/app_routes.dart';
 import 'package:raulvelasco_dev/screens/home_screen.dart';
 import 'package:raulvelasco_dev/screens/navigator_screen.dart';
@@ -42,7 +42,8 @@ class PortfolioScreen extends StatelessWidget {
             subtitle:
                 'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.',
             onTap: () {
-                            Navigator.pushNamed(context, AppRoutes.rssportDetail);
+                 
+                    Navigator.pushNamed(context, AppRoutes.rssportDetail);
 
 //              gridTileOnTap(context, 5); // Índice para RSSportDetailScreen
             },
@@ -196,6 +197,87 @@ Future<void> gridTileOnTap(BuildContext context, String routeName) async {
           subtitle: Text(subtitle), // Subtítulo del ListTile
         ),
       ),
+    );
+  }
+}
+*/
+
+import 'package:flutter/material.dart';
+import 'package:raulvelasco_dev/screens/portfolio/hepapp_detail_sceen.dart';
+import 'package:raulvelasco_dev/screens/portfolio/rssport_detail_screen.dart';
+import 'package:raulvelasco_dev/screens/portfolio/solucioneshosteleras_detail_screen.dart';
+import 'package:raulvelasco_dev/widgets/grid_tile_widget.dart';
+
+class PortfolioScreen extends StatelessWidget {
+  const PortfolioScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Navigator(
+      onGenerateRoute: (RouteSettings settings) {
+        WidgetBuilder builder;
+        switch (settings.name) {
+          case '/':
+            builder = (BuildContext _) => PortfolioHomeScreen();  // Pantalla principal del Portfolio
+            break;
+          case '/hepapp':
+            builder = (BuildContext _) => const HepAppDetailScreen();
+            break;
+          case '/rssport':
+            builder = (BuildContext _) => const RSSportDetailScreen();
+            break;
+          case '/solucioneshosteleras':
+            builder = (BuildContext _) => const SolucionesHostelerasDetailScreen();
+            break;
+          default:
+            throw Exception('Invalid route: ${settings.name}');
+        }
+        return MaterialPageRoute(builder: builder, settings: settings);
+      },
+    );
+  }
+}
+
+class PortfolioHomeScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GridView(
+      padding: const EdgeInsets.all(25.0),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2, // Número de columnas en la cuadrícula
+        crossAxisSpacing: 10.0, // Espacio horizontal entre los elementos
+        mainAxisSpacing: 10.0, // Espacio vertical entre los elementos
+        childAspectRatio: 6 / 2, // Relación de aspecto de los elementos (ancho/alto)
+      ),
+      children: [
+        GridTileWidget(
+          imagePath: './assets/images/hepapplogo.png',
+          title: 'HepApp',
+          subtitle:
+              'HepApptology es una aplifcación realizada en colaboración con la Universidad de Calgary, en Alberta (Canadá).',
+          onTap: () {
+            Navigator.of(context).pushNamed('/hepapp');
+          },
+        ),
+        GridTileWidget(
+          imagePath: 'assets/images/rssportlogo.png',
+          title: 'RS Sport Web',
+          subtitle:
+              'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript.',
+          onTap: () {
+            Navigator.of(context).pushNamed('/rssport');
+          },
+        ),
+        GridTileWidget(
+          imagePath: 'assets/images/solucioneshosteleras.jpg',
+          title: 'Soluciones Hosteleras',
+          subtitle:
+              'Integración de API para plataforma de venta de soluciones hosteleras en Makro.',
+          onTap: () {
+            Navigator.of(context).pushNamed('/solucioneshosteleras');
+          },
+        ),
+      ],
     );
   }
 }

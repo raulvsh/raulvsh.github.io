@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:raulvelasco_dev/widgets/fixed_app_bar.dart';
 
 class HepAppDetailScreen extends StatelessWidget {
-
-
   const HepAppDetailScreen({
-
     Key? key,
   }) : super(key: key);
 
@@ -12,7 +10,7 @@ class HepAppDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('hepapp titulo'),
+        title: Text('rssport titulo'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
