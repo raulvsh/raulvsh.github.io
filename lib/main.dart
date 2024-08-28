@@ -11,9 +11,9 @@ void main() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    //print("Firebase inicializado correctamente.");
+    print("Firebase inicializado correctamente.");
   } catch (e) {
-    //print("Error al inicializar Firebase: $e");
+    print("Error al inicializar Firebase: $e");
   }
   runApp(MyApp());
 }
@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       onGenerateRoute: AppRoutes.generateRoute,
-      initialRoute: AppRoutes.home,
+      //initialRoute: AppRoutes.home,
       home: const NavigatorScreen(),
     );
   }

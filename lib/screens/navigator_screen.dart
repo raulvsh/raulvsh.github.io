@@ -39,7 +39,8 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
     AppRoutes.books: const BooksMainScreen(),
     AppRoutes.hepAppDetail: const HepAppDetailScreen(),
     AppRoutes.rssportDetail: const RSSportDetailScreen(),
-    AppRoutes.solucionesHostelerasDetail: const SolucionesHostelerasDetailScreen(),
+    AppRoutes.solucionesHostelerasDetail:
+        const SolucionesHostelerasDetailScreen(),
   };
 
   /*void _onItemTapped(int index, String route) {
@@ -53,7 +54,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
     setState(() {
       _currentRoute = route;
     });
-      print("Navigating to route: $route");
+    print("Navigating to route: $route");
 
     //Navigator.pushNamed(context, route);
   }
@@ -96,22 +97,22 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
                 _buildIconButton(
                     Icons.person, 'Currículum', AppRoutes.curriculum),
                 _buildIconButton(Icons.book, 'Libros', AppRoutes.books),
-                /*_buildIconButton(Icons.work, 'Portfolio', //1),
-                _buildIconButton(Icons.person, 'Currículum', //2),
-                _buildIconButton(Icons.book, 'Libros', //3),*/
               ],
             ),
             Expanded(
-                //child: _pages[                    _selectedIndex]), // Uso de Expanded para ajustar el contenido
-                //child: AppRoutes.getPage(_selectedIndex)),
-                /*child: Navigator(
+              //child: _pages[                    _selectedIndex]), // Uso de Expanded para ajustar el contenido
+              //child: AppRoutes.getPage(_selectedIndex)),
+              /*child: Navigator(
               onGenerateRoute: AppRoutes.generateRoute,
               initialRoute: _currentRoute,
             )),*/
-            child: IndexedStack(
-                index: _getCurrentPageIndex(),
+              child: IndexedStack(
+                //ndex: _getCurrentPageIndex(),
+                index: _routeIndex(_currentRoute),
+
                 children: _pages.values.toList(),
-              ),)
+              ),
+            )
           ],
         ),
       ),
@@ -243,7 +244,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
     }
   }
 
-  int _getCurrentPageIndex() {
+  /*int _getCurrentPageIndex() {
     switch (_currentRoute) {
       case AppRoutes.portfolio:
         return 1;
@@ -258,7 +259,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
       default:
         return 0;
     }
-  }
+  }*/
 
   String _routeForLabel(String label) {
     switch (label) {
