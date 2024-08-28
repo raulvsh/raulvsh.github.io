@@ -18,49 +18,21 @@ class NavigatorScreen extends StatefulWidget {
 class _NavigatorScreenState extends State<NavigatorScreen> {
   String _currentRoute = AppRoutes.home;
 
-  int _selectedIndex = 0;
+  //int _selectedIndex = 0;
   int _hoveredIndex = -1;
-
-  /*final List<Widget> _pages = [
-    const HomeScreen(), // Puedes añadir el contenido de la pantalla principal aquí
-    const PortfolioScreen(),
-    const CurriculumScreen(),
-    const BooksMainScreen(),
-
-    const HepAppDetailScreen(),
-    const RSSportDetailScreen(),
-    const SolucionesHostelerasDetailScreen(),
-  ];*/
 
   final Map<String, Widget> _pages = {
     AppRoutes.home: const HomeScreen(),
     AppRoutes.portfolio: const PortfolioScreen(),
     AppRoutes.curriculum: const CurriculumScreen(),
     AppRoutes.books: const BooksMainScreen(),
-    //AppRoutes.hepAppDetail: const HepAppDetailScreen(),
-    //AppRoutes.rssportDetail: const RSSportDetailScreen(),
-    //AppRoutes.solucionesHostelerasDetail:
-    //  const SolucionesHostelerasDetailScreen(),
-    //AppRoutes.portfoliohome: PortfolioHomeScreen(),
   };
-
-  /*void _onItemTapped(int index, String route) {
-    setState(() {
-      _selectedIndex = index;
-      _currentRoute = route;
-    });
-  }*/
 
   void _onItemTapped(String route) {
     setState(() {
       _currentRoute = route;
     });
     print("Navigating to route: $route");
-
-    
-
-
-    //Navigator.pushNamed(context, route);
   }
 
   @override
@@ -81,10 +53,10 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
 
               title: TextButton(
                 onPressed: () {
-                  setState(() {
+                  /*setState(() {
                     _selectedIndex =
                         0; // La pantalla de inicio esté seleccionada
-                  });
+                  });*/
                   _onItemTapped(AppRoutes.home);
                 },
                 child: const Text(
@@ -98,27 +70,15 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
               // Iconos
               actions: <Widget>[
                 _buildIconButton(Icons.work, 'Portfolio', AppRoutes.portfolio),
-                
                 _buildIconButton(
                     Icons.person, 'Currículum', AppRoutes.curriculum),
                 _buildIconButton(Icons.book, 'Libros', AppRoutes.books),
-                _buildIconButton(
-                    Icons.book, 'porthome', AppRoutes.portfolio),
+                _buildIconButton(Icons.book, 'porthome', AppRoutes.portfolio),
               ],
             ),
             Expanded(
-              //child: _pages[                    _selectedIndex]), // Uso de Expanded para ajustar el contenido
-              //child: AppRoutes.getPage(_selectedIndex)),
-              /*child: Navigator(
-              onGenerateRoute: AppRoutes.generateRoute,
-              initialRoute: _currentRoute,
-            )),*/
               child: IndexedStack(
-                //ndex: _getCurrentPageIndex(),
                 index: _routeIndex(_currentRoute),
-                //index: _routeIndex(AppRoutes.portfoliohome),
-
-
                 children: _pages.values.toList(),
               ),
             )
@@ -176,57 +136,6 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
     );
   }
 
-  /*Widget _buildIconButton(IconData icon, String label, int index) {
-    return MouseRegion(
-        onEnter: (_) => setState(() {
-              _hoveredIndex =
-                  index; // Guarda el índice del botón al que se pasa el ratón por encima
-            }),
-        onExit: (_) => setState(() {
-              _hoveredIndex = -1; // Restablece cuando el ratón sale del botón
-            }),
-        child: TextButton(
-          onPressed: () => _onItemTapped(index),
-          style: TextButton.styleFrom(
-            minimumSize: Size.zero, // Tamaño mínimo del botón
-            padding: const EdgeInsets.symmetric(
-                horizontal: 16.0), // Espaciado horizontal
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          ),
-          child: _buildIconAndTextRow(icon, label, index),
-        ));
-  }*/
-
-  /*Row _buildIconAndTextRow(IconData icon, String label, int index) {
-    return Row(
-      children: <Widget>[
-        Icon(
-          icon,
-          color: Colors.white, // Ícono en blanco
-        ),
-        const SizedBox(width: 8.0), // Espacio entre el icono y el texto
-        Stack(
-          clipBehavior: Clip.none,
-          children: [
-            Text(
-              label.toUpperCase(), // Texto en mayúsculas
-              style: const TextStyle(
-                fontFamily: 'SanFrancisco',
-                color: Colors.white, // Texto en blanco
-                fontWeight: FontWeight.normal,
-                decoration: TextDecoration.none, // Sin subrayado por defecto
-              ),
-            ),
-            if (_hoveredIndex == index ||
-                _selectedIndex ==
-                    index) // Subrayar si está en hover o seleccionado
-              _buildSectionsUnderscore(label),
-          ],
-        ),
-      ],
-    );
-  }*/
-
   Positioned _buildSectionsUnderscore(String label) {
     return Positioned(
       left: 0,
@@ -248,29 +157,10 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
         return 2;
       case AppRoutes.books:
         return 3;
-      case AppRoutes.portfoliohome:
-        return 4;
       default:
         return 0;
     }
   }
-
-  /*int _getCurrentPageIndex() {
-    switch (_currentRoute) {
-      case AppRoutes.portfolio:
-        return 1;
-      case AppRoutes.curriculum:
-        return 2;
-      case AppRoutes.books:
-        return 3;
-      case AppRoutes.hepAppDetail:
-      case AppRoutes.rssportDetail:
-      case AppRoutes.solucionesHostelerasDetail:
-        return 4;
-      default:
-        return 0;
-    }
-  }*/
 
   String _routeForLabel(String label) {
     switch (label) {

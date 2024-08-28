@@ -36,10 +36,6 @@ class AppRoutes {
       case solucionesHostelerasDetail:
         return MaterialPageRoute(
             builder: (_) => const SolucionesHostelerasDetailScreen());
-      /*case portfoliohome:
-        print('portfolio home');
-        return MaterialPageRoute(builder: (_) => PortfolioScreen());*/
-
       default:
         return MaterialPageRoute(builder: (_) => const NavigatorScreen());
     }

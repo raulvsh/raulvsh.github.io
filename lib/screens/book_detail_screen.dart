@@ -13,7 +13,8 @@ class BookDetailScreen extends StatelessWidget {
         title: const Text('Book Details'),
       ),
       body: FutureBuilder(
-        future: FirebaseFirestore.instance.collection('books').doc(bookId).get(),
+        future:
+            FirebaseFirestore.instance.collection('books').doc(bookId).get(),
         builder: (context, AsyncSnapshot<DocumentSnapshot> snapshot) {
           if (!snapshot.hasData) {
             return const Center(child: CircularProgressIndicator());
@@ -26,7 +27,8 @@ class BookDetailScreen extends StatelessWidget {
               children: [
                 Text(
                   book['title'],
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                      fontSize: 24, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 8),
                 Text(

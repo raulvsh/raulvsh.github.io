@@ -4,7 +4,8 @@ import 'package:raulvelasco_dev/app_routes.dart';
 import 'firebase_options.dart';
 import 'screens/navigator_screen.dart';
 
-void main() {//async {
+void main() {
+  //async {
   //WidgetsFlutterBinding.ensureInitialized();
   /*try {
     // Inicializar Firebase con las opciones correctas para la web

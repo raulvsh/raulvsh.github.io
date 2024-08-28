@@ -12,8 +12,8 @@ class GridTileWidget extends StatefulWidget {
     required this.subtitle,
     required this.onTap,
 
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   _GridTileWidgetState createState() => _GridTileWidgetState();
@@ -37,7 +37,7 @@ class _GridTileWidgetState extends State<GridTileWidget> {
         });
       },
       child: GestureDetector(
-        onTap: widget.onTap, // Ejecutar la función onTap cuando se hace clic
+        onTap: widget.onTap, 
 
         child: Card(
           color: _isHovered

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:raulvelasco_dev/widgets/fixed_app_bar.dart';
 
 class HepAppDetailScreen extends StatelessWidget {
   const HepAppDetailScreen({
@@ -9,8 +8,7 @@ class HepAppDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            backgroundColor: Color.fromARGB(200,255,255,255),
-
+      backgroundColor: Color.fromARGB(200, 255, 255, 255),
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(51, 153, 177, 1.0),
         title: Text('hepapp titulo'),
@@ -24,5 +22,4 @@ class HepAppDetailScreen extends StatelessWidget {
       ),
     );
   }
-
 }

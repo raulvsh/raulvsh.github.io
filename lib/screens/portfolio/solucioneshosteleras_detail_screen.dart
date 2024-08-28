@@ -12,11 +12,11 @@ class SolucionesHostelerasDetailScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text('soluciones titulo'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
         child: Text(
           'descripcion de soluciones',
-          style: const TextStyle(fontSize: 18.0),
+          style: TextStyle(fontSize: 18.0),
         ),
       ),
     );

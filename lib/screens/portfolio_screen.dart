@@ -214,17 +214,13 @@ class PortfolioScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Navigator(
-
-      initialRoute: '/', // Asegura que siempre comience en la ruta '/'
-
+      initialRoute: '/',
       onGenerateRoute: (RouteSettings settings) {
-        
         WidgetBuilder builder;
 
         switch (settings.name) {
           case '/':
-            builder = (BuildContext _) =>
-                PortfolioHomeScreen(); // Pantalla principal del Portfolio
+            builder = (BuildContext _) => PortfolioHomeScreen();
             break;
           case '/hepapp':
             builder = (BuildContext _) => const HepAppDetailScreen();
@@ -245,8 +241,6 @@ class PortfolioScreen extends StatelessWidget {
   }
 }
 
-
-
 class PortfolioHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -266,8 +260,6 @@ class PortfolioHomeScreen extends StatelessWidget {
           subtitle:
               'HepApptology es una aplifcación realizada en colaboración con la Universidad de Calgary, en Alberta (Canadá).',
           onTap: () {
-                        //Navigator.of(context).pushNamedAndRemoveUntil('/hepapp', (Route<dynamic> route) => false);
-
             Navigator.of(context).pushNamed('/hepapp');
           },
         ),
