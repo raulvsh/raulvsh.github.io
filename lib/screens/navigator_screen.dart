@@ -13,6 +13,7 @@ class NavigatorScreen extends StatefulWidget {
 
 class _NavigatorScreenState extends State<NavigatorScreen> {
   int _selectedIndex = 0;
+  int _hoveredIndex = -1;
 
   final List<Widget> _pages = [
     const HomeScreen(), // Puedes añadir el contenido de la pantalla principal aquí
@@ -60,21 +61,19 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
               ),
               // Iconos
               actions: <Widget>[
-                //_buildIconButton(Icons.home, 'Home', 0),
                 _buildIconButton(Icons.work, 'Portfolio', 1),
                 _buildIconButton(Icons.person, 'Currículum', 2),
                 _buildIconButton(Icons.book, 'Libros', 3),
               ],
             ),
-            _pages[_selectedIndex],
+            Expanded(
+                child: _pages[
+                    _selectedIndex]), // Uso de Expanded para ajustar el contenido
           ],
         ),
       ),
     );
   }
-
-  int _hoveredIndex =
-      -1; // Variable para almacenar el índice del botón en hover
 
   Widget _buildIconButton(IconData icon, String label, int index) {
     return MouseRegion(
@@ -117,7 +116,10 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
                 decoration: TextDecoration.none, // Sin subrayado por defecto
               ),
             ),
-            if (_hoveredIndex == index) _buildSectionsUnderscore(label),
+            if (_hoveredIndex == index ||
+                _selectedIndex ==
+                    index) // Subrayar si está en hover o seleccionado
+              _buildSectionsUnderscore(label),
           ],
         ),
       ],
