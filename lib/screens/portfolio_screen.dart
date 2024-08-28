@@ -214,11 +214,17 @@ class PortfolioScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Navigator(
+
+      initialRoute: '/', // Asegura que siempre comience en la ruta '/'
+
       onGenerateRoute: (RouteSettings settings) {
+        
         WidgetBuilder builder;
+
         switch (settings.name) {
           case '/':
-            builder = (BuildContext _) => PortfolioHomeScreen();  // Pantalla principal del Portfolio
+            builder = (BuildContext _) =>
+                PortfolioHomeScreen(); // Pantalla principal del Portfolio
             break;
           case '/hepapp':
             builder = (BuildContext _) => const HepAppDetailScreen();
@@ -227,7 +233,8 @@ class PortfolioScreen extends StatelessWidget {
             builder = (BuildContext _) => const RSSportDetailScreen();
             break;
           case '/solucioneshosteleras':
-            builder = (BuildContext _) => const SolucionesHostelerasDetailScreen();
+            builder =
+                (BuildContext _) => const SolucionesHostelerasDetailScreen();
             break;
           default:
             throw Exception('Invalid route: ${settings.name}');
@@ -238,6 +245,8 @@ class PortfolioScreen extends StatelessWidget {
   }
 }
 
+
+
 class PortfolioHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -247,7 +256,8 @@ class PortfolioHomeScreen extends StatelessWidget {
         crossAxisCount: 2, // Número de columnas en la cuadrícula
         crossAxisSpacing: 10.0, // Espacio horizontal entre los elementos
         mainAxisSpacing: 10.0, // Espacio vertical entre los elementos
-        childAspectRatio: 6 / 2, // Relación de aspecto de los elementos (ancho/alto)
+        childAspectRatio:
+            6 / 2, // Relación de aspecto de los elementos (ancho/alto)
       ),
       children: [
         GridTileWidget(
@@ -256,6 +266,8 @@ class PortfolioHomeScreen extends StatelessWidget {
           subtitle:
               'HepApptology es una aplifcación realizada en colaboración con la Universidad de Calgary, en Alberta (Canadá).',
           onTap: () {
+                        //Navigator.of(context).pushNamedAndRemoveUntil('/hepapp', (Route<dynamic> route) => false);
+
             Navigator.of(context).pushNamed('/hepapp');
           },
         ),

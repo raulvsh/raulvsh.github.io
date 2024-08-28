@@ -37,10 +37,11 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
     AppRoutes.portfolio: const PortfolioScreen(),
     AppRoutes.curriculum: const CurriculumScreen(),
     AppRoutes.books: const BooksMainScreen(),
-    AppRoutes.hepAppDetail: const HepAppDetailScreen(),
-    AppRoutes.rssportDetail: const RSSportDetailScreen(),
-    AppRoutes.solucionesHostelerasDetail:
-        const SolucionesHostelerasDetailScreen(),
+    //AppRoutes.hepAppDetail: const HepAppDetailScreen(),
+    //AppRoutes.rssportDetail: const RSSportDetailScreen(),
+    //AppRoutes.solucionesHostelerasDetail:
+    //  const SolucionesHostelerasDetailScreen(),
+    //AppRoutes.portfoliohome: PortfolioHomeScreen(),
   };
 
   /*void _onItemTapped(int index, String route) {
@@ -55,6 +56,9 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
       _currentRoute = route;
     });
     print("Navigating to route: $route");
+
+    
+
 
     //Navigator.pushNamed(context, route);
   }
@@ -94,9 +98,12 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
               // Iconos
               actions: <Widget>[
                 _buildIconButton(Icons.work, 'Portfolio', AppRoutes.portfolio),
+                
                 _buildIconButton(
                     Icons.person, 'Currículum', AppRoutes.curriculum),
                 _buildIconButton(Icons.book, 'Libros', AppRoutes.books),
+                _buildIconButton(
+                    Icons.book, 'porthome', AppRoutes.portfolio),
               ],
             ),
             Expanded(
@@ -109,6 +116,8 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
               child: IndexedStack(
                 //ndex: _getCurrentPageIndex(),
                 index: _routeIndex(_currentRoute),
+                //index: _routeIndex(AppRoutes.portfoliohome),
+
 
                 children: _pages.values.toList(),
               ),
@@ -239,6 +248,8 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
         return 2;
       case AppRoutes.books:
         return 3;
+      case AppRoutes.portfoliohome:
+        return 4;
       default:
         return 0;
     }
@@ -269,6 +280,8 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
         return AppRoutes.curriculum;
       case 'Libros':
         return AppRoutes.books;
+      /*case 'PortfolioHome':
+        return AppRoutes.portfoliohome;*/
       default:
         return AppRoutes.home;
     }

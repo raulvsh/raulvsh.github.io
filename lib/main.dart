@@ -4,9 +4,9 @@ import 'package:raulvelasco_dev/app_routes.dart';
 import 'firebase_options.dart';
 import 'screens/navigator_screen.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  try {
+void main() {//async {
+  //WidgetsFlutterBinding.ensureInitialized();
+  /*try {
     // Inicializar Firebase con las opciones correctas para la web
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
@@ -14,13 +14,18 @@ void main() async {
     print("Firebase inicializado correctamente.");
   } catch (e) {
     print("Error al inicializar Firebase: $e");
-  }
-  runApp(MyApp());
+  }*/
+  runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

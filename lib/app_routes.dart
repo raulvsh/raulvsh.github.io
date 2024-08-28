@@ -18,13 +18,13 @@ class AppRoutes {
   static const solucionesHostelerasDetail = '/solucioneshosteleras';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
-      print("Generating route for: ${settings.name}");
+    print("Generating route for: ${settings.name}");
 
     switch (settings.name) {
       case home:
         return MaterialPageRoute(builder: (_) => const HomeScreen());
       case portfolio:
-        return MaterialPageRoute(builder: (_) => const PortfolioScreen());
+        return MaterialPageRoute(builder: (_) =>  const PortfolioScreen());
       case curriculum:
         return MaterialPageRoute(builder: (_) => const CurriculumScreen());
       case books:
@@ -34,7 +34,12 @@ class AppRoutes {
       case rssportDetail:
         return MaterialPageRoute(builder: (_) => const RSSportDetailScreen());
       case solucionesHostelerasDetail:
-        return MaterialPageRoute(builder: (_) => const SolucionesHostelerasDetailScreen());
+        return MaterialPageRoute(
+            builder: (_) => const SolucionesHostelerasDetailScreen());
+      /*case portfoliohome:
+        print('portfolio home');
+        return MaterialPageRoute(builder: (_) => PortfolioScreen());*/
+
       default:
         return MaterialPageRoute(builder: (_) => const NavigatorScreen());
     }
