@@ -67,6 +67,12 @@ flutter:
   #   - images/a_dot_ham.jpeg
     - assets/images/background.jpg
     - assets/images/hepapplogo.png
+    - assets/images/solucioneshosteleras.jpg
+    - assets/images/background2.webp
+    - assets/images/background3.webp
+    - assets/images/background4.webp
+
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,50 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:raulvelasco_dev/app_routes.dart';
+import 'package:raulvelasco_dev/screens/home_screen.dart';
+import 'package:raulvelasco_dev/screens/navigator_screen.dart';
+import 'package:raulvelasco_dev/screens/portfolio/hepapp_detail_sceen.dart';
+import 'package:raulvelasco_dev/screens/portfolio/project_detail_screen.dart';
+import 'package:raulvelasco_dev/screens/portfolio/solucioneshosteleras_detail_screen.dart';
 import 'package:raulvelasco_dev/widgets/grid_tile_widget.dart';
+
+import 'portfolio/rssport_detail_screen.dart';
 
 class PortfolioScreen extends StatelessWidget {
   const PortfolioScreen({super.key});
-
-  /*@override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView(
-
-        children: [
-          /*AppBar(
-            title: const Text('Portfolio',
-                style: TextStyle(
-                  color: Colors.white,
-                )),
-      
-            backgroundColor: Colors.transparent, // Hace la AppBar transparente
-          ),*/
-          _buildListTileLeft(
-            imagePath: './assets/images/hepapplogo.png',
-            title: 'HepApp',
-            subtitle:
-                'HepApptology es una aplicación realizada en colaboración con la Universidad de Calgary, en Alberta (Canadá). Se trata de una herramienta educacional destinada a médicos y estudiantes de medicina, con información sobre el hígado y la evaluación, diagnóstico y tratamiento del carcinoma hepatocelular (HCC).',
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          _buildListTileLeft(
-            imagePath: 'assets/images/rssportlogo.png',
-            title: 'RS Sport Web',
-            subtitle:
-                'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.',
-          ),
-          ListTile(
-            title: const Text('Project 1'),
-            subtitle: const Text('Description of project 1'),
-            onTap: () {
-              // Aquí puedes agregar la navegación a los detalles del proyecto
-            },
-          )
-        ],
-      ),
-    );
-  }
-}*/
 
   @override
   Widget build(BuildContext context) {
@@ -64,19 +30,36 @@ class PortfolioScreen extends StatelessWidget {
             title: 'HepApp',
             subtitle:
                 'HepApptology es una aplicación realizada en colaboración con la Universidad de Calgary, en Alberta (Canadá). Se trata de una herramienta educacional destinada a médicos y estudiantes de medicina, con información sobre el hígado y la evaluación, diagnóstico y tratamiento del carcinoma hepatocelular (HCC).',
+            onTap: () {
+              Navigator.pushNamed(context, AppRoutes.hepAppDetail);
+
+              //gridTileOnTap(context, 4); // Índice para HepAppDetailScreen
+            },
           ),
           GridTileWidget(
             imagePath: 'assets/images/rssportlogo.png',
             title: 'RS Sport Web',
             subtitle:
                 'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.',
+            onTap: () {
+                            Navigator.pushNamed(context, AppRoutes.rssportDetail);
+
+//              gridTileOnTap(context, 5); // Índice para RSSportDetailScreen
+            },
           ),
           GridTileWidget(
-            imagePath: 'assets/images/rssportlogo.png',
-            title: 'RS Sport Web',
+            imagePath: 'assets/images/solucioneshosteleras.jpg',
+            title: 'Soluciones Hosteleras',
             subtitle:
-                'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.',
+                'Integración de API para plataforma de venta de soluciones hosteleras en Makro: Productos de hostelería optimizados para una experiencia de compra eficiente.',
+            onTap: () {
+                            Navigator.pushNamed(context, AppRoutes.solucionesHostelerasDetail);
+
+              //gridTileOnTap(
+               //   context, 6); // Índice para SolucionesHostelerasDetailScreen
+            },
           ),
+          /*
           GridTileWidget(
             imagePath: './assets/images/hepapplogo.png',
             title: 'HepApp',
@@ -99,13 +82,31 @@ class PortfolioScreen extends StatelessWidget {
               imagePath: 'assets/images/rssportlogo.png',
               title: 'RS Sport Web',
               subtitle:
-                  'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.'),
+                  'Plataforma de cronometraje deportivo desarrollada con HTML, CSS y JavaScript para una experiencia web interactiva y precisa.'),*/
         ],
       ),
     );
   }
 
- /* Widget _buildGridTile({
+  /*Future<void> gridTileOnTap(BuildContext context, int index) async {
+  Navigator.of(context).push(
+    MaterialPageRoute(
+      builder: (context) => NavigatorScreen(),
+    ),
+  ).then((_) {
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (context) => AppRoutes.getPage(index),
+      ),
+    );
+  });
+}*/
+
+Future<void> gridTileOnTap(BuildContext context, String routeName) async {
+  Navigator.pushNamed(context, routeName);
+}
+
+  /* Widget _buildGridTile({
     required String imagePath,
     required String title,
     required String subtitle,

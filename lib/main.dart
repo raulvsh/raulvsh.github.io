@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:raulvelasco_dev/app_routes.dart';
 import 'firebase_options.dart';
 import 'screens/navigator_screen.dart';
 
@@ -24,12 +25,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'RaulVelassco.dev',
+      title: 'RaulVelasco.dev',
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),    
-      
+      ),
+      onGenerateRoute: AppRoutes.generateRoute,
+      initialRoute: AppRoutes.home,
       home: const NavigatorScreen(),
     );
   }
