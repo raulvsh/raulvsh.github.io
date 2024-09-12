@@ -53,6 +53,11 @@ class AppTextStyles {
     fontWeight: FontWeight.bold,
   );
 
+    static const title3 = TextStyle(
+    fontSize: 18.0,
+    fontWeight: FontWeight.bold,
+  );
+
   static const text18Black87Height1_5 = TextStyle(
     fontSize: 18.0,
     color: Colors.black87,
@@ -63,4 +68,6 @@ class AppTextStyles {
     fontSize: 16.0,
     height: 1.5,
   );
+
+
 }
