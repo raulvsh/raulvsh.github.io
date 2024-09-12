@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:raulvelasco_dev/styles.dart';
 
 class GridTileWidget extends StatefulWidget {
   final String imagePath;
@@ -24,6 +25,7 @@ class _GridTileWidgetState extends State<GridTileWidget> {
 
   @override
   Widget build(BuildContext context) {
+    
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       onEnter: (_) {
@@ -42,11 +44,8 @@ class _GridTileWidgetState extends State<GridTileWidget> {
         child: Card(
           color: _isHovered
               ? Colors.white
-              : const Color.fromARGB(
-                  210, 255, 255, 255), // Color en hover y sin hover
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(2.0),
-          ),
+              : AppCardStyles.transparentCardBackground, // Color en hover y sin hover
+          shape: AppCardStyles.roundedRectangleBorder2,
 
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

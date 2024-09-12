@@ -247,7 +247,9 @@ class PortfolioHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
-      padding: const EdgeInsets.all(25.0),
+      //padding: const EdgeInsets.all(20.0),
+              padding: EdgeInsets.fromLTRB(20,0,20,20),
+
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // Número de columnas en la cuadrícula
         crossAxisSpacing: 10.0, // Espacio horizontal entre los elementos

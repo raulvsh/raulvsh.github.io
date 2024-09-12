@@ -29,7 +29,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
     setState(() {
       _currentRoute = route;
     });
-    print("Navigating to route: $route");
+    //print("Navigating to route: $route");
   }
 
   @override
@@ -70,7 +70,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
                 _buildIconButton(
                     Icons.person, 'Currículum', AppRoutes.curriculum),
                 _buildIconButton(Icons.book, 'Libros', AppRoutes.books),
-                _buildIconButton(Icons.book, 'porthome', AppRoutes.portfolio),
+                //_buildIconButton(Icons.book, 'porthome', AppRoutes.portfolio),
               ],
             ),
             Expanded(
