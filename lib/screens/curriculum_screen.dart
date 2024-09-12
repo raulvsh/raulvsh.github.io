@@ -29,14 +29,22 @@ class CurriculumScreen extends StatelessWidget {
               children: [
                 const Padding(
                   padding: EdgeInsets.fromLTRB(15.0, 15, 0, 0),
-                  child: Text('Raúl Velasco Salinas', style: AppTextStyles.title,),
+                  child: Text(
+                    'Raúl Velasco Salinas',
+                    style: AppTextStyles.title,
+                  ),
                 ),
-                buildContactSection(),
-                buildProfessionalExperienceSession(),
-                buildAcademicEducationSection(),
-                buildComplementaryEducationSection(),
-                buildLanguagesSection(),
-                buildInformaticSection(),
+                Stack(
+                  children: [
+                    _buildContactSection(),
+                    _buildProfilePic(),
+                  ],
+                ),
+                _buildProfessionalExperienceSession(),
+                _buildAcademicEducationSection(),
+                _buildComplementaryEducationSection(),
+                _buildLanguagesSection(),
+                _buildInformaticSection(),
               ],
             ),
           ),
@@ -45,16 +53,38 @@ class CurriculumScreen extends StatelessWidget {
     );
   }
 
-  Widget buildContactSection() {
+Widget _buildProfilePic() {
+    return Positioned(
+      right: 0, // Ajusta el margen derecho según sea necesario
+      top: 16, // Ajusta el margen superior según sea necesario
+      bottom: 16, // Ajusta el margen inferior si quieres que la imagen ocupe toda la altura
+      child: Container(
+        //color: Colors.red,
+        width: 250, // Ajusta el ancho de la imagen
+        height: 250, // Ajusta la altura de la imagen
+        margin: const EdgeInsets.all(10.0), // Ajusta el margen alrededor de la imagen
+        decoration: const BoxDecoration(
+          //color: Colors.red,
+          shape: BoxShape.circle, // Para hacer la imagen circular
+          image: DecorationImage(
+            image: AssetImage('assets/images/profile_pic.png'), // Reemplaza con la ruta de tu imagen
+            fit: BoxFit.contain,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildContactSection() {
     return _buildSection(
       title: 'Contacto',
       subsections: [
         Subsection(
           title: '',
           content: '''
-Teléfono: 627110280
 Correo electrónico: raulvsh@gmail.com
 Github: https://github.com/raulvsh
+Página personal: raulvelasco.dev
 Carné de conducir: B, C, A.
 Lugar de residencia: Burgos.''',
         ),
@@ -62,7 +92,7 @@ Lugar de residencia: Burgos.''',
     );
   }
 
-  Widget buildProfessionalExperienceSession() {
+  Widget _buildProfessionalExperienceSession() {
     return _buildSection(
       title: 'Experiencia Profesional',
       subsections: [
@@ -119,7 +149,7 @@ Fecha: 2006 – 2014''')
     );
   }
 
-  buildAcademicEducationSection() {
+  _buildAcademicEducationSection() {
     return _buildSection(
       title: 'Formación Académica',
       subsections: [
@@ -133,43 +163,45 @@ Fecha: 2006 – 2014''')
             content:
                 '''- Mención en Telemática. Universidad de Valladolid. Año: 2014-2018'''),
         Subsection(
-            title:
-                'Curso CCNA Switching & Routing',
+            title: 'Curso CCNA Switching & Routing',
             content: '''- Curso de redes CCNA 1: Introducción a redes
 - Regimiento de Transmisiones Nº 1. Ejército de Tierra, Burgos. Año: 2017''')
       ],
     );
   }
 
-  buildComplementaryEducationSection() {
+  _buildComplementaryEducationSection() {
     return _buildSection(
       title: 'Formación Complementaria',
       subsections: [
         Subsection(
           title: 'Angular',
-          content: '''- . Angular, TypeScript. Modalidad online. Año: 2024''',
+          content: '''- Angular, TypeScript. Modalidad online. Año: 2024''',
         ),
         Subsection(
           title: 'Unity',
-          content: '''- . Programación en C#. Modalidad online. Año: 2022''',
+          content: '''- Programación en C#. Modalidad online. Año: 2022''',
         ),
         Subsection(
           title: 'Curso programación Web',
-          content: '''- . HTML, CSS, JavaScript. Universidad Politécnica de Madrid. Modalidad online. Año: 2020''',
+          content:
+              '''- HTML, CSS, JavaScript. Universidad Politécnica de Madrid. Modalidad online. Año: 2020''',
         ),
         Subsection(
           title: 'GitHub',
-          content: '''- . Universidad Politécnica de Madrid. Modalidad online. Año: 2020''',
+          content:
+              '''- Universidad Politécnica de Madrid. Modalidad online. Año: 2020''',
         ),
         Subsection(
           title: 'Flutter',
-          content: '''- : Introducción al SDK de Google. Fernando Herrera. Udemy. Año: 2019''',
+          content:
+              '''- Introducción al SDK de Google. Fernando Herrera. Udemy. Año: 2019''',
         ),
       ],
     );
   }
 
-  buildLanguagesSection() {
+  _buildLanguagesSection() {
     return _buildSection(
       title: 'Idiomas',
       subsections: [
@@ -179,13 +211,14 @@ Fecha: 2006 – 2014''')
         ),
         Subsection(
           title: 'Intercambio Lingüístico',
-          content: '''Boston, Estados Unidos de América. Duración: Dos meses. Año: 2004''',
+          content:
+              '''Boston, Estados Unidos de América. Duración: Dos meses. Año: 2004''',
         ),
       ],
     );
   }
 
-  buildInformaticSection() {
+  _buildInformaticSection() {
     return _buildSection(
       title: 'Informática',
       subsections: [
@@ -195,7 +228,8 @@ Fecha: 2006 – 2014''')
         ),
         Subsection(
           title: 'Redes',
-          content: '''- Despliegue y configuración de redes de fibra y Ethernet, Firewall, TCP/IP, DHCP, DNS, VoIP.''',
+          content:
+              '''- Despliegue y configuración de redes de fibra y Ethernet, Firewall, TCP/IP, DHCP, DNS, VoIP.''',
         ),
         Subsection(
           title: 'Sistemas Operativos',
@@ -203,7 +237,8 @@ Fecha: 2006 – 2014''')
         ),
         Subsection(
           title: 'Lenguajes de programación',
-          content: '''- C, C#, Dart, Flutter, Java, JavaScript, Python, Rust.''',
+          content:
+              '''- C, C#, Dart, Flutter, Java, JavaScript, Python, Rust.''',
         ),
         Subsection(
           title: 'Diseño Web',

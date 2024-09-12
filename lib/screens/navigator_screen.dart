@@ -76,8 +76,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
             ),
             Expanded(
               child: Padding(
-                //padding: AppPaddings.screenPadding,
-                padding: EdgeInsets.all(20),
+                padding: const EdgeInsets.all(20),
                 child: IndexedStack(
                   index: _routeIndex(_currentRoute),
                   children: _pages.values.toList(),

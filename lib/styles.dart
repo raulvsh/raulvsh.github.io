@@ -7,11 +7,11 @@ class AppCardStyles {
     borderRadius: BorderRadius.circular(2.0),
   );
 
-  static final EdgeInsets homeCardPadding =
+  static const EdgeInsets homeCardPadding =
       EdgeInsets.symmetric(vertical: 30.0, horizontal: 40.0);
 
-  static final Color transparentCardBackground =
-      Color.fromARGB(235, 255, 255, 255);
+  static const Color transparentCardBackground =
+       Color.fromARGB(235, 255, 255, 255);
 
   // Define el estilo de la Card
   /*static Card getHomeCardStyle(Widget child) {
