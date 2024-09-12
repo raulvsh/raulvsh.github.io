@@ -33,9 +33,22 @@ class AppColors {}
 
 class AppPaddings {}
 
-class AppTextStyles{
+class AppTextStyles {
+  static const title = TextStyle(
+    fontSize: 28.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
 
+  static const text18Black87Space1_5 = TextStyle(
+    fontSize: 18.0,
+    color: Colors.black87,
+    height: 1.5, // Espaciado de línea
+  );
 
-
-  
+  static const title1 = TextStyle(
+    fontSize: 22.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
 }
