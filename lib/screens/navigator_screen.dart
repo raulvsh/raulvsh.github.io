@@ -4,6 +4,7 @@ import 'package:raulvelasco_dev/screens/books_main_screen.dart';
 import 'package:raulvelasco_dev/screens/curriculum_screen.dart';
 import 'package:raulvelasco_dev/screens/home_screen.dart';
 import 'package:raulvelasco_dev/screens/portfolio_screen.dart';
+import 'package:raulvelasco_dev/styles.dart';
 
 class NavigatorScreen extends StatefulWidget {
   const NavigatorScreen({super.key});
@@ -74,9 +75,13 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
               ],
             ),
             Expanded(
-              child: IndexedStack(
-                index: _routeIndex(_currentRoute),
-                children: _pages.values.toList(),
+              child: Padding(
+                //padding: AppPaddings.screenPadding,
+                padding: EdgeInsets.all(20),
+                child: IndexedStack(
+                  index: _routeIndex(_currentRoute),
+                  children: _pages.values.toList(),
+                ),
               ),
             )
           ],

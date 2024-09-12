@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
     return Container(
       padding: AppPaddings.screenPadding,
       width: double.infinity,
+      //color: Colors.red,
       child: Card(
           color: AppCardStyles.transparentCardBackground,
           shape: AppCardStyles.roundedRectangleBorder2,
