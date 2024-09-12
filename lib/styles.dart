@@ -31,7 +31,9 @@ class AppCardStyles {
 
 class AppColors {}
 
-class AppPaddings {}
+class AppPaddings {
+  static const screenPadding = EdgeInsets.fromLTRB(20, 0, 20, 20);
+}
 
 class AppTextStyles {
   static const title = TextStyle(
@@ -40,15 +42,25 @@ class AppTextStyles {
     color: Colors.black,
   );
 
-  static const text18Black87Space1_5 = TextStyle(
+  static const title1 = TextStyle(
+    fontSize: 22.0,
+    fontWeight: FontWeight.bold,
+    color: Colors.black,
+  );
+
+  static const title2 = TextStyle(
+    fontSize: 20.0,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const text18Black87Height1_5 = TextStyle(
     fontSize: 18.0,
     color: Colors.black87,
     height: 1.5, // Espaciado de línea
   );
 
-  static const title1 = TextStyle(
-    fontSize: 22.0,
-    fontWeight: FontWeight.bold,
-    color: Colors.black,
+  static const text16height1_5 = TextStyle(
+    fontSize: 16.0,
+    height: 1.5,
   );
 }

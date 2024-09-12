@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
+      padding: AppPaddings.screenPadding,
       width: double.infinity,
       child: Card(
           color: AppCardStyles.transparentCardBackground,
@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                 // Introducción
                 Text(
                   'Soy Raúl Velasco, un desarrollador especializado en programación web y móvil con sede en Burgos.',
-                  style: AppTextStyles.text18Black87Space1_5,
+                  style: AppTextStyles.text18Black87Height1_5,
                 ),
                 SizedBox(height: 16.0),
 
@@ -42,24 +42,24 @@ class HomeScreen extends StatelessWidget {
                 // Lista de especialidades
                 Text(
                   '- Desarrollo Web: Creación de sitios web interactivos y responsivos, optimizados para rendimiento y SEO.',
-                  style: AppTextStyles.text18Black87Space1_5,
+                  style: AppTextStyles.text18Black87Height1_5,
                 ),
                 SizedBox(height: 8.0),
                 Text(
                   '- Aplicaciones Móviles: Desarrollo de aplicaciones móviles nativas e híbridas, adaptadas a las necesidades específicas de cada cliente.',
-                  style: AppTextStyles.text18Black87Space1_5,
+                  style: AppTextStyles.text18Black87Height1_5,
                 ),
                 SizedBox(height: 8.0),
                 Text(
                   '- Innovación Continua: Estoy comprometido con el aprendizaje constante y la adopción de las últimas tecnologías para ofrecer siempre lo mejor.',
-                  style: AppTextStyles.text18Black87Space1_5,
+                  style: AppTextStyles.text18Black87Height1_5,
                 ),
                 SizedBox(height: 16.0),
 
                 // Conclusión
                 Text(
                   'Si tienes un proyecto en mente o simplemente quieres hablar sobre las últimas tendencias en tecnología, ¡no dudes en ponerte en contacto!',
-                  style: AppTextStyles.text18Black87Space1_5,
+                  style: AppTextStyles.text18Black87Height1_5,
                 ),
               ],
             ),

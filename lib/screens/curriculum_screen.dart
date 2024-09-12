@@ -7,11 +7,12 @@ class CurriculumScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-        child: Container(
+        padding: AppPaddings.screenPadding,
+        child: SizedBox(
             width: double.infinity,
             child: (Card(
               color: AppCardStyles.transparentCardBackground,
+              shape: AppCardStyles.roundedRectangleBorder2,
               child: Padding(
                 padding: AppCardStyles.homeCardPadding,
                 child: ListView(
@@ -125,6 +126,8 @@ Diseño Web
   }
 
   Widget _buildSection({required String title, required String content}) {
+
+
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Card(
@@ -135,18 +138,12 @@ Diseño Web
             children: [
               Text(
                 title,
-                style: const TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: AppTextStyles.title2,
               ),
               const SizedBox(height: 8.0),
               Text(
                 content,
-                style: const TextStyle(
-                  fontSize: 16.0,
-                  height: 1.5,
-                ),
+                style: AppTextStyles.text16height1_5,
               ),
             ],
           ),
