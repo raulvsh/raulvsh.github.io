@@ -17,7 +17,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
   String _currentRoute = AppRoutes.home;
 
   //int _selectedIndex = 0;
-  int _hoveredIndex = -1;
+  //int _hoveredIndex = -1;
 
   final Map<String, Widget> _pages = {
     AppRoutes.home: const HomeScreen(),
@@ -91,12 +91,12 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
 
   Widget _buildIconButton(IconData icon, String label, String route) {
     return MouseRegion(
-      onEnter: (_) => setState(() {
+      /*onEnter: (_) => setState(() {
         _hoveredIndex = _routeIndex(route);
       }),
       onExit: (_) => setState(() {
         _hoveredIndex = -1;
-      }),
+      }),*/
       child: TextButton(
         onPressed: () => _onItemTapped(route),
         style: TextButton.styleFrom(

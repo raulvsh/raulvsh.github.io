@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:raulvelasco_dev/styles.dart';
 
 class SolucionesHostelerasDetailScreen extends StatelessWidget {
   const SolucionesHostelerasDetailScreen({
@@ -8,7 +9,7 @@ class SolucionesHostelerasDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(200, 255, 255, 255),
+      backgroundColor: AppCardStyles.transparentCardBackground,
       appBar: AppBar(
         title: const Text('Gestión de pedidos para solucioneshosteleras.es'),
       ),

@@ -203,6 +203,8 @@ Future<void> gridTileOnTap(BuildContext context, String routeName) async {
 */
 
 import 'package:flutter/material.dart';
+import 'package:raulvelasco_dev/screens/portfolio/arvel_gps_detail_screen.dart';
+import 'package:raulvelasco_dev/screens/portfolio/crypto_detail_screen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/hepapp_detail_sceen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/rssport_detail_screen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/solucioneshosteleras_detail_screen.dart';
@@ -232,6 +234,14 @@ class PortfolioScreen extends StatelessWidget {
             builder =
                 (BuildContext _) => const SolucionesHostelerasDetailScreen();
             break;
+            case '/cryptoportfolio':
+            builder =
+                (BuildContext _) => const CryptoDetailScreen();
+            break;
+            case '/arvelgps':
+            builder =
+                (BuildContext _) => const ArvelGpsDetailScreen();
+            break;
           default:
             throw Exception('Invalid route: ${settings.name}');
         }
@@ -248,7 +258,7 @@ class PortfolioHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView(
       //padding: const EdgeInsets.all(20.0),
-              padding: EdgeInsets.fromLTRB(20,0,20,20),
+      padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
 
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // Número de columnas en la cuadrícula
@@ -283,6 +293,23 @@ class PortfolioHomeScreen extends StatelessWidget {
               'Integración de API para plataforma de venta de soluciones hosteleras en Makro.',
           onTap: () {
             Navigator.of(context).pushNamed('/solucioneshosteleras');
+          },
+        ),
+        GridTileWidget(
+          imagePath: 'assets/images/crypto.png',
+          title: 'Seguimiento de cotización de criptomonedas',
+          subtitle: 'Controla tu portafolio de criptomonedas en un solo lugar.',
+          onTap: () {
+            Navigator.of(context).pushNamed('/cryptoportfolio');
+          },
+        ),
+        GridTileWidget(
+          imagePath: 'assets/images/arvel.png',
+          title: 'ARVEL GPS',
+          subtitle:
+              'ARVEL es una empresa dedicada a proteger a tus animales más queridos. Con nuestros collares de localización GPS, no te preocupes por perder a tu compañero nunca más.',
+          onTap: () {
+            Navigator.of(context).pushNamed('/arvelgps');
           },
         ),
       ],

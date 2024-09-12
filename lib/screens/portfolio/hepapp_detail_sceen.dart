@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:raulvelasco_dev/styles.dart';
 
 class HepAppDetailScreen extends StatelessWidget {
   const HepAppDetailScreen({
@@ -8,9 +9,10 @@ class HepAppDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(200, 255, 255, 255),
+      backgroundColor: AppCardStyles.transparentCardBackground,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(51, 153, 177, 1.0),
+        foregroundColor: Colors.white,
         title: const Text('HepApp'),
       ),
       body: const Padding(

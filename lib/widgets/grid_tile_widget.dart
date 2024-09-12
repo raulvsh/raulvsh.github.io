@@ -61,11 +61,10 @@ class _GridTileWidgetState extends State<GridTileWidget> {
               ),
               Padding(
                 padding: const EdgeInsets.all(12.0),
-                child: Text(
-                  widget.title,
-                  style: const TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold,
+                child: Center(
+                  child: Text(
+                    widget.title,
+                    style: AppTextStyles.title1,
                   ),
                 ),
               ),
@@ -73,10 +72,7 @@ class _GridTileWidgetState extends State<GridTileWidget> {
                 padding: const EdgeInsets.symmetric(horizontal: 12.0),
                 child: Text(
                   widget.subtitle,
-                  style: const TextStyle(
-                    fontSize: 14.0,
-                    color: Colors.black87,
-                  ),
+                  style: AppTextStyles.text18Black87Height1_5,
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                 ),

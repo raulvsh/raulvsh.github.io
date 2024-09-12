@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:raulvelasco_dev/styles.dart';
 
 class RSSportDetailScreen extends StatelessWidget {
   const RSSportDetailScreen({
@@ -8,7 +9,7 @@ class RSSportDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(200, 255, 255, 255),
+      backgroundColor: AppCardStyles.transparentCardBackground,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(1, 183, 255, 1.0),
         title: const Text('Página web para RS-Sport'),
