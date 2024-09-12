@@ -16,40 +16,35 @@ class CurriculumScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: AppPaddings.screenPadding,
-      child: SizedBox(
-        width: double.infinity,
-        child: (Card(
-          color: AppCardStyles.transparentCardBackground,
-          shape: AppCardStyles.roundedRectangleBorder2,
-          child: Padding(
-            padding: AppPaddings.screenPadding,
-            child: ListView(
-              children: [
-                const Padding(
-                  padding: EdgeInsets.fromLTRB(15.0, 15, 0, 0),
-                  child: Text(
-                    'Raúl Velasco Salinas',
-                    style: AppTextStyles.title,
-                  ),
-                ),
-                Stack(
-                  children: [
-                    _buildContactSection(),
-                    _buildProfilePic(),
-                  ],
-                ),
-                _buildProfessionalExperienceSession(),
-                _buildAcademicEducationSection(),
-                _buildComplementaryEducationSection(),
-                _buildLanguagesSection(),
-                _buildInformaticSection(),
-              ],
-            ),
+    return Container(
+      //padding: AppPaddings.screenPadding,
+      //width: double.infinity,
+      child: (Card(
+        color: AppCardStyles.transparentCardBackground,
+        shape: AppCardStyles.roundedRectangleBorder2,
+        child: Padding(
+          padding: AppPaddings.cardPadding,
+          child: ListView(
+            children: [
+              const Text(
+                'Raúl Velasco Salinas',
+                style: AppTextStyles.title,
+              ),
+              Stack(
+                children: [
+                  _buildContactSection(),
+                  _buildProfilePic(),
+                ],
+              ),
+              _buildProfessionalExperienceSession(),
+              _buildAcademicEducationSection(),
+              _buildComplementaryEducationSection(),
+              _buildLanguagesSection(),
+              _buildInformaticSection(),
+            ],
           ),
-        )),
-      ),
+        ),
+      )),
     );
   }
 

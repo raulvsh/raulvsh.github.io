@@ -208,6 +208,7 @@ import 'package:raulvelasco_dev/screens/portfolio/crypto_detail_screen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/hepapp_detail_sceen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/rssport_detail_screen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/solucioneshosteleras_detail_screen.dart';
+import 'package:raulvelasco_dev/styles.dart';
 import 'package:raulvelasco_dev/widgets/grid_tile_widget.dart';
 
 class PortfolioScreen extends StatelessWidget {
@@ -258,7 +259,7 @@ class PortfolioHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView(
       //padding: const EdgeInsets.all(20.0),
-      padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+      //padding: AppCardStyles.homeCardPadding,
 
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // Número de columnas en la cuadrícula
@@ -304,7 +305,7 @@ class PortfolioHomeScreen extends StatelessWidget {
           },
         ),
         GridTileWidget(
-          imagePath: 'assets/images/arvel.png',
+          imagePath: 'assets/images/arvel_logo.png',
           title: 'ARVEL GPS',
           subtitle:
               'ARVEL es una empresa dedicada a proteger a tus animales más queridos. Con nuestros collares de localización GPS, no te preocupes por perder a tu compañero nunca más.',

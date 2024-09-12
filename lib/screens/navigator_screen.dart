@@ -10,10 +10,10 @@ class NavigatorScreen extends StatefulWidget {
   const NavigatorScreen({super.key});
 
   @override
-  _NavigatorScreenState createState() => _NavigatorScreenState();
+  NavigatorScreenState createState() => NavigatorScreenState();
 }
 
-class _NavigatorScreenState extends State<NavigatorScreen> {
+class NavigatorScreenState extends State<NavigatorScreen> {
   String _currentRoute = AppRoutes.home;
 
   //int _selectedIndex = 0;
@@ -35,6 +35,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -47,6 +48,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
         child: Column(
           children: [
             AppBar(
+
               backgroundColor: Colors.transparent,
 
               title: TextButton(
@@ -59,10 +61,7 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
                 },
                 child: const Text(
                   'raulvelasco.dev',
-                  style: TextStyle(
-                    color: Colors.white, // Color del texto
-                    fontSize: 20.0, // Tamaño del texto
-                  ),
+                  style: AppTextStyles.raulvelascodevStyle,
                 ),
               ),
               // Iconos
@@ -76,7 +75,9 @@ class _NavigatorScreenState extends State<NavigatorScreen> {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(20),
+                 //padding: const EdgeInsets.only(bottom: 0.0),
+                 padding: AppPaddings.pagePadding,
+
                 child: IndexedStack(
                   index: _routeIndex(_currentRoute),
                   children: _pages.values.toList(),

@@ -8,7 +8,9 @@ class CryptoDetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Container(
+      //padding: AppPaddings.screenPadding,
+      child: Scaffold(
       backgroundColor: AppCardStyles.transparentCardBackground,
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(51, 153, 177, 1.0),
@@ -26,6 +28,6 @@ My_Portfolio es perfecta tanto para inversores novatos como para aquellos con ex
           style: TextStyle(fontSize: 18.0),
         ),
       ),
-    );
+    ));
   }
 }

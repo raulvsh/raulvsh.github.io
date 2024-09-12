@@ -7,15 +7,15 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: AppPaddings.screenPadding,
+      //padding: AppPaddings.screenPadding,
       width: double.infinity,
       //color: Colors.red,
       child: Card(
           color: AppCardStyles.transparentCardBackground,
           shape: AppCardStyles.roundedRectangleBorder2,
-          child: Padding(
-            padding: AppCardStyles.homeCardPadding,
-            child: const Column(
+          child: const Padding(
+            padding: AppPaddings.cardPadding,
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.max,
               children: [

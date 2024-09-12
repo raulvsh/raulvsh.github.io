@@ -1,5 +1,7 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:raulvelasco_dev/app_routes.dart';
+import 'package:raulvelasco_dev/firebase_options.dart';
 import 'screens/navigator_screen.dart';
 
 void main() async {
@@ -7,7 +9,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Descomenta y usa este bloque para inicializar Firebase antes de ejecutar la aplicación.
-  /* 
   try {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
@@ -16,7 +17,6 @@ void main() async {
   } catch (e) {
     print("Error al inicializar Firebase: $e");
   }
-  */
 
   runApp(const MyApp());
 }
