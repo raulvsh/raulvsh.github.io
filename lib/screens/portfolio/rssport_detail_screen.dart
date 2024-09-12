@@ -8,10 +8,10 @@ class RSSportDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(200, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(200, 255, 255, 255),
       appBar: AppBar(
-        backgroundColor: Color.fromRGBO(1, 183, 255, 1.0),
-        title: Text('rssport titulo'),
+        backgroundColor: const Color.fromRGBO(1, 183, 255, 1.0),
+        title: const Text('rssport titulo'),
       ),
       body: const Padding(
         padding: EdgeInsets.all(16.0),

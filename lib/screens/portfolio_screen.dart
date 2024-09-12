@@ -242,6 +242,8 @@ class PortfolioScreen extends StatelessWidget {
 }
 
 class PortfolioHomeScreen extends StatelessWidget {
+  const PortfolioHomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GridView(

@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Center(
       child: (Card(
-        margin: const EdgeInsets.all(20.0),
+        margin: EdgeInsets.all(20.0),
         color: Color.fromARGB(200, 255, 255, 255),
         child: Padding(
           padding: EdgeInsets.all(20.0),

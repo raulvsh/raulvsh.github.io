@@ -7,8 +7,8 @@ class ProjectDetailScreen extends StatelessWidget {
   const ProjectDetailScreen({
     required this.title,
     required this.description,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

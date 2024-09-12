@@ -42,7 +42,7 @@ class _GridTileWidgetState extends State<GridTileWidget> {
         child: Card(
           color: _isHovered
               ? Colors.white
-              : Color.fromARGB(
+              : const Color.fromARGB(
                   210, 255, 255, 255), // Color en hover y sin hover
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(2.0),
