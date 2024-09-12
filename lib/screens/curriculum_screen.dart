@@ -20,7 +20,7 @@ class CurriculumScreen extends StatelessWidget {
       //padding: AppPaddings.screenPadding,
       //width: double.infinity,
       child: (Card(
-        color: AppCardStyles.transparentCardBackground,
+        color: AppColors.transparentCardBackground,
         shape: AppCardStyles.roundedRectangleBorder2,
         child: Padding(
           padding: AppPaddings.cardPadding,

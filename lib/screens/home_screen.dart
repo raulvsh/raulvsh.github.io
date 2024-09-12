@@ -6,12 +6,12 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       //padding: AppPaddings.screenPadding,
       width: double.infinity,
       //color: Colors.red,
       child: Card(
-          color: AppCardStyles.transparentCardBackground,
+          color: AppColors.transparentCardBackground,
           shape: AppCardStyles.roundedRectangleBorder2,
           child: const Padding(
             padding: AppPaddings.cardPadding,

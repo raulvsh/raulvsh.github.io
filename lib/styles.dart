@@ -12,8 +12,7 @@ class AppCardStyles {
 //            EdgeInsets.symmetric(vertical: 30.0, horizontal: 40.0);
 
 
-  static const Color transparentCardBackground =
-       Color.fromARGB(235, 255, 255, 255);
+
 
   // Define el estilo de la Card
   /*static Card getHomeCardStyle(Widget child) {
@@ -31,7 +30,11 @@ class AppCardStyles {
   }*/
 }
 
-class AppColors {}
+class AppColors {
+  static const Color transparentCardBackground =
+       Color.fromARGB(240, 255, 255, 255);
+
+}
 
 class AppPaddings {
   //static const screenPadding = EdgeInsets.fromLTRB(0, 0, 0, 0);

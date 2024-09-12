@@ -8,8 +8,8 @@ class BooksMainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: AppPaddings.screenPadding,
+    return SizedBox(
+      //padding: AppPaddings.screenPadding,
       width: double.infinity,
       child:
           /*appBar: AppBar(
@@ -17,14 +17,14 @@ class BooksMainScreen extends StatelessWidget {
       ),*/
           Card(
         shape: AppCardStyles.roundedRectangleBorder2,
-        color: AppCardStyles.transparentCardBackground,
+        color: AppColors.transparentCardBackground,
         //padding: const EdgeInsets.all(8.0),
         child: Padding(
           padding: AppPaddings.cardPadding,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
+              const Padding(
                     padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
                 child: Text(
                   'Resúmenes de libros',
@@ -93,7 +93,7 @@ class BooksMainScreen extends StatelessWidget {
         }
       },
       errorBuilder: (context, error, stackTrace) {
-        return Icon(Icons.error,
+        return const Icon(Icons.error,
             color: Colors.red); // Muestra un icono en caso de error
       },
     );

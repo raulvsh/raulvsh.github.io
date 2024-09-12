@@ -223,7 +223,7 @@ class PortfolioScreen extends StatelessWidget {
 
         switch (settings.name) {
           case '/':
-            builder = (BuildContext _) => PortfolioHomeScreen();
+            builder = (BuildContext _) => const PortfolioHomeScreen();
             break;
           case '/hepapp':
             builder = (BuildContext _) => const HepAppDetailScreen();
@@ -260,6 +260,7 @@ class PortfolioHomeScreen extends StatelessWidget {
     return GridView(
       //padding: const EdgeInsets.all(20.0),
       //padding: AppCardStyles.homeCardPadding,
+      
 
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2, // Número de columnas en la cuadrícula

@@ -17,10 +17,10 @@ class GridTileWidget extends StatefulWidget {
   });
 
   @override
-  _GridTileWidgetState createState() => _GridTileWidgetState();
+  GridTileWidgetState createState() => GridTileWidgetState();
 }
 
-class _GridTileWidgetState extends State<GridTileWidget> {
+class GridTileWidgetState extends State<GridTileWidget> {
   bool _isHovered = false;
 
   @override
@@ -44,7 +44,7 @@ class _GridTileWidgetState extends State<GridTileWidget> {
         child: Card(
           color: _isHovered
               ? Colors.white
-              : AppCardStyles.transparentCardBackground, // Color en hover y sin hover
+              : AppColors.transparentCardBackground, // Color en hover y sin hover
           shape: AppCardStyles.roundedRectangleBorder2,
 
           child: Column(

@@ -8,7 +8,7 @@ void main() async {
   // Asegúrate de que cualquier inicialización asíncrona esté completa antes de runApp.
   WidgetsFlutterBinding.ensureInitialized();
 
-  // Descomenta y usa este bloque para inicializar Firebase antes de ejecutar la aplicación.
+  // Inicializa Firebase antes de ejecutar la aplicación.
   try {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
