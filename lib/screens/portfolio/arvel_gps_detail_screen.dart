@@ -15,7 +15,7 @@ class ArvelGpsDetailScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           shape: AppCardStyles.roundedRectangleBorder2,
-          backgroundColor: const Color.fromARGB(255, 6, 41, 28),
+          //backgroundColor: const Color.fromARGB(255, 6, 41, 28),
           foregroundColor: Colors.white,
           title: const Text('ARVEL GPS'),
         ),
@@ -24,7 +24,7 @@ class ArvelGpsDetailScreen extends StatelessWidget {
           child: const Text(
             '''ARVEL GPS es una empresa comprometida con la seguridad y protección de tus animales más queridos. Especializados en tecnología de localización avanzada, ofrecemos collares de localización GPS diseñados para asegurar que nunca pierdas de vista a tus compañeros, especialmente en actividades como la caza o largas caminatas al aire libre. Con ARVEL GPS, disfrutarás de la tranquilidad de saber que tu animal está siempre bajo control.
         
-        Servicios de ARVEL GPS:
+          Servicios de ARVEL GPS:
         
         1. Collares de Localización GPS: Nuestros collares de localización GPS están diseñados para ofrecer una seguridad superior y una experiencia sin preocupaciones. Construidos para resistir las condiciones más extremas, los collares de ARVEL GPS destacan por:
         
