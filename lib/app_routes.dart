@@ -18,8 +18,6 @@ class AppRoutes {
   static const solucionesHostelerasDetail = '/solucioneshosteleras';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    print("Generating route for: ${settings.name}");
-
     switch (settings.name) {
       case home:
         return MaterialPageRoute(builder: (_) => const HomeScreen());

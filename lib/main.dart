@@ -1,4 +1,5 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:raulvelasco_dev/app_routes.dart';
 import 'package:raulvelasco_dev/firebase_options.dart';
@@ -13,9 +14,14 @@ void main() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
-    print("Firebase inicializado correctamente.");
+
+    if (kDebugMode) {
+      print("Firebase inicializado correctamente.");
+    }
   } catch (e) {
-    print("Error al inicializar Firebase: $e");
+    if (kDebugMode) {
+      print("Error al inicializar Firebase: $e");
+    }
   }
 
   runApp(const MyApp());
