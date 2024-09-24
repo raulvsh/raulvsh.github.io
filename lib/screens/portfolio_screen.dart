@@ -208,7 +208,6 @@ import 'package:raulvelasco_dev/screens/portfolio/crypto_detail_screen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/hepapp_detail_sceen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/rssport_detail_screen.dart';
 import 'package:raulvelasco_dev/screens/portfolio/solucioneshosteleras_detail_screen.dart';
-import 'package:raulvelasco_dev/styles.dart';
 import 'package:raulvelasco_dev/widgets/grid_tile_widget.dart';
 
 class PortfolioScreen extends StatelessWidget {
